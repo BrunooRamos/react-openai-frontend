@@ -10,3 +10,4 @@ export * from './loaders/TypingLoader';
 
 
 export * from "./sidebar/SidebarMenuItem";
+export * from "./sidebar/UserName";

@@ -58,6 +58,7 @@ export const TextMessageBoxSelect = ({ onSendMessage, placeholder, disableCorrec
             className="w-2/5 ml-5 border rounded-xl text-gray-800 focus:outline-none focus:border-indigo-300 pl-4 h-10"
             value={ selectedOption }
             onChange={ e => setSelectedOption( e.target.value ) }
+            title="Select an option"
           >
             <option value=''>Seleccione</option>
             {

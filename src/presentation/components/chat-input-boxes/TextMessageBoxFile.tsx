@@ -39,6 +39,7 @@ export const TextMessageBoxFile = ({ onSendMessage, placeholder, disableCorrecti
           type="button"
           className="flex items-center justify-center text-gray-400 hover:text-gray-600"
           onClick={ () => inputFileRef.current?.click() }
+          title="Attach file"
         >
             <i className="fa-solid fa-paperclip text-xl"></i>
         </button>

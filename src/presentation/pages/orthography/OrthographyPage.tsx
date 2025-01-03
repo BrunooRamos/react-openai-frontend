@@ -6,9 +6,6 @@ interface Message {
   isGpt: boolean;
 }
 
-
-
-
 export const OrthographyPage = () => {
 
   const [isLoading, setIsLoading] = useState(false);
@@ -28,8 +25,6 @@ export const OrthographyPage = () => {
 
 
   }
-
-
 
   return (
     <div className="chat-container">

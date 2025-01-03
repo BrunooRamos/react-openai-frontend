@@ -4,27 +4,28 @@ interface Props {
   to: string;
   icon: string;
   title: string;
-  description: string;
 }
 
-
 export const SidebarMenuItem = ({
-  to, icon, title, description
+  to, icon, title
 }:Props) => {
   return (
     <NavLink
       to={to}
-      className={({ isActive }) =>
-        isActive
-          ? "flex justify-center items-center bg-gray-800 rounded-md p-2 transition-colors"
-          : "flex justify-center items-center hover:bg-gray-800 rounded-md p-2 transition-colors"
-      }
+      className={({ isActive }) => {
+        const baseClasses = "flex items-center gap-4 px-6 py-2 relative hover:bg-zinc-200";
+        const activeClasses = isActive ? " border-l-4 border-black" : "";
+        return baseClasses + activeClasses;
+      }}
     >
-      <i className={`${icon} text-2xl mr-4 text-indigo-400`}></i>
-      <div className="flex flex-col flex-grow">
-        <span className="text-white text-lg font-semibold">{title}</span>
-        <span className="text-gray-400 text-sm">{description}</span>
-      </div>
+      {({ isActive }) => (
+        <>
+          <i className={`${icon} text-xl ${isActive ? 'text-zinc-900' : 'text-zinc-400'}`}></i>
+          <div>
+            <h3 className={`${isActive ? 'text-zinc-900' : 'text-zinc-400'}`}>{title}</h3>
+          </div>
+        </>
+      )}
     </NavLink>
   );
 };
